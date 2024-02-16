@@ -1,1 +1,22 @@
+import time
+from tkinter import *
+import ttkthemes
+from tkinter import ttk
+root=ttkthemes.ThemedTk()
+root.geometry('200x100')
+root.title('date')
+root.configure(bg='black')
+def clock():
+               date=time.strftime('%d/%m/%y')
+               currenttime=time.strftime('%I:%M:%S')
+               datetimelabel.config(text=f' Date:{date}\n Time:{currenttime}')
+               datetimelabel.after(1000,clock)
+datetimelabel=Label(root,font=('times new roman',18,'bold'),bg='skyblue')
+datetimelabel.place(x=20,y=25)
+datetimeframe=Frame(root,bg='black')
+datetimeframe.place(x=200,y=100)
+clock()
+root.mainloop()
 
+               
+               
